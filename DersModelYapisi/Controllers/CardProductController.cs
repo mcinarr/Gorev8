@@ -12,9 +12,9 @@ namespace DersModelYapisi.Controllers
             var product2 = new Product { Id = 2, Name = "Iphone", Price = 1500 };
             var product3 = new Product { Id = 3, Name = "Playstation", Price = 400 };
 
-            var cartProduct1 = new CardProduct { Product = product1, Quantity = 5, Id = 1, price = 1400 };
-            var cartProduct2 = new CardProduct { Product = product2, Quantity = 4, Id = 2, price = 1500 };
-            var cartProduct3 = new CardProduct { Product = product3, Quantity = 3, Id = 3, price = 1700 };
+            var cartProduct1 = new CardProduct { Product = product1, Quantity = 5, Id = 1, Price = 1400 };
+            var cartProduct2 = new CardProduct { Product = product2, Quantity = 4, Id = 2, Price = 1500 };
+            var cartProduct3 = new CardProduct { Product = product3, Quantity = 3, Id = 3, Price = 1700 };
 
             List<CardProduct> cardProducts = new List<CardProduct>();
             cardProducts.Add(cartProduct1);
@@ -27,8 +27,8 @@ namespace DersModelYapisi.Controllers
             decimal ToplamKDV = 0;
             foreach (var cardProduct in datas.products)
             {
-                ToplamTutar += (cardProduct.price * Convert.ToDecimal(cardProduct.Quantity) * 1.20M);
-                ToplamKDV += (cardProduct.price * Convert.ToDecimal(cardProduct.Quantity) * 0.20M);
+                ToplamTutar += (cardProduct.Price * Convert.ToDecimal(cardProduct.Quantity) * 1.20M);
+                ToplamKDV += (cardProduct.Price * Convert.ToDecimal(cardProduct.Quantity) * 0.20M);
             }
 
             ViewBag.ToplamTutar = ToplamTutar;
